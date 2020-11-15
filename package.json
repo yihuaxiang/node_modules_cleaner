@@ -1,11 +1,14 @@
 {
-  "name": "node_modules_cleaner",
+  "name": "aowu-node-modules-cleaner",
   "version": "1.0.0",
-  "description": "",
+  "description": "aowu-node-modules-cleaner",
   "main": "index.js",
+  "bin": {
+    "nmcleaner": "bin/nmcleaner.sh"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "aowu",
   "license": "ISC"
 }
