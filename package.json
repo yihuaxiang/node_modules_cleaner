@@ -1,10 +1,10 @@
 {
   "name": "aowu-node-modules-cleaner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "aowu-node-modules-cleaner",
   "main": "index.js",
   "bin": {
-    "nmcleaner": "bin/nmcleaner.sh"
+    "nmc": "bin/nmcleaner.sh"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
