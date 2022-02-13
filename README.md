@@ -25,7 +25,7 @@ nmc
 1. npm安装模块一开始是树状结构，依赖的依赖都放到各自的node_modules目录下面，这样一个复杂一点项目安装完依赖，node_modules目录动不动就上G的大小。
 2. 后来npm支持了扁平结构，但一旦遇到版本冲突，也就是依赖相同的模块但版本各不同，这样的依赖依旧会安装到各自的node_modules目录下，还是会有树状结构。
 3. 所以node_modules就像黑洞一样，深不见底。有时候因为路径太长，系统都无法删除此类文件。
-4. 以上也会导致，项目仅有几个页面，而`node_modules`居然有数据`G`的存储空间
+4. 以上也会导致，项目仅有几个页面，而`node_modules`居然有数个`G`的存储空间
 
 
 ## node_modules 清理器
@@ -41,4 +41,4 @@ npm install -g aowu-node-modules-cleaner
 nmc
 ```
 
-改工具会递归所有目录（最大2层深度），将`node_modules`目录进行清理
+该工具会递归所有目录（最大2层深度），将`node_modules`目录进行清理
