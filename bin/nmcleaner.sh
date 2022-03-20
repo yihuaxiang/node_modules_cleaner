@@ -6,7 +6,7 @@ do
   cd $basedir
   if [[ -d $file ]]
   then
-    echo '----------------'
+    echo '[nmc] begin clean node_modules'
     echo file is $file
     echo pwd is $("pwd")
 
@@ -18,10 +18,10 @@ do
     modules=$(/usr/bin/find $pth -name node_modules  -maxdepth 2)
     if [[ -n $modules ]]
     then
-      echo modules is $modules
+      echo "[nmc] find $modules"
       for module in $modules
       do
-        echo module is $module
+        echo "[nmc] cleaning $module"
         rm -rf $module
       done
     else
@@ -29,3 +29,4 @@ do
     fi
   fi
 done
+echo "[nmc] done"
