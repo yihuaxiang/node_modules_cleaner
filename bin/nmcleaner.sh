@@ -12,7 +12,6 @@ do
 
     cd $file
     pth=$("pwd")
-    echo "[nmc] path is $pth"
     modules=$(/usr/bin/find $pth -name node_modules  -maxdepth 2)
     if [[ -n $modules ]]
     then
