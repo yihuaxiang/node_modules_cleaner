@@ -7,14 +7,12 @@ do
   if [[ -d $file ]]
   then
     echo '[nmc] begin clean node_modules'
-    echo file is $file
-    echo pwd is $("pwd")
 
     du -hs $file
 
     cd $file
     pth=$("pwd")
-    echo pth is $pth
+    echo "[nmc] path is $pth"
     modules=$(/usr/bin/find $pth -name node_modules  -maxdepth 2)
     if [[ -n $modules ]]
     then
