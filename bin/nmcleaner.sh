@@ -1,29 +1,13 @@
 #!/bin/bash
+set -euo pipefail
 
-basedir=$(pwd)
-for file in $(ls)
-do
-  cd $basedir
-  if [[ -d $file ]]
-  then
-    echo '[nmc] begin clean node_modules'
+basedir="$(pwd)"
+echo "[nmc] scanning $basedir"
 
-    du -hs $file
-
-    cd $file
-    pth=$("pwd")
-    modules=$(/usr/bin/find $pth -name node_modules  -maxdepth 2)
-    if [[ -n $modules ]]
-    then
-      echo "[nmc] find $modules"
-      for module in $modules
-      do
-        echo "[nmc] cleaning $module"
-        rm -rf $module
-      done
-    else
-      echo not found any module dir in ${pth}
-    fi
-  fi
+find "$basedir" -mindepth 1 -maxdepth 2 -type d -name node_modules | while IFS= read -r module; do
+  echo "[nmc] cleaning $module"
+  du -sh "$module" || true
+  rm -rf "$module"
 done
+
 echo "[nmc] done"
