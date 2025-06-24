@@ -41,4 +41,5 @@ npm install -g aowu-node-modules-cleaner
 nmc
 ```
 
-该工具会递归所有目录（最大2层深度），将`node_modules`目录进行清理
+该工具会递归所有目录（最大2层深度），将`node_modules`目录进行清理。
+脚本使用`find`命令查找目标目录，能够正确处理包含空格的路径。
